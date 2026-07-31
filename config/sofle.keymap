@@ -28,24 +28,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <32 31>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <27 33>;
-        };
-
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <25 41>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         caps: caps {
@@ -61,7 +44,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
         };
 
         Tap_Hold_MO: Tap_Hold_MO {
@@ -70,7 +53,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
         };
     };
 
@@ -107,22 +90,22 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &kp F1  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                        &kp K_CALC    &none            &kp KP_ASTERISK  &kp KP_DIVIDE  &none         &trans
-&trans  &none   &none   &none     &none       &none                              &none         &kp KP_N7        &kp KP_N8        &kp KP_N9      &kp KP_MINUS  &none
-&trans  &none   &none   &none     &none       &none                              &none         &kp KP_N4        &kp KP_N5        &kp KP_N6      &kp KP_PLUS   &none
-&trans  &none   &none   &none     &none       &none        &kp LBKT    &kp RBKT  &none         &kp KP_N1        &kp KP_N2        &kp KP_N3      &kp KP_ENTER  &none
-                &trans  &trans    &trans      &trans       &trans      &trans    &kp KP_COMMA  &kp KP_NUMBER_0  &none            &kp KP_DOT
+&trans  &kp F1  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                        &none  &none            &kp KP_ASTERISK  &kp KP_DIVIDE  &none          &trans
+&trans  &none   &none   &none     &none       &none                              &none  &kp KP_N7        &kp KP_N8        &kp KP_N9      &kp KP_MINUS   &none
+&trans  &none   &none   &none     &none       &none                              &none  &kp KP_N4        &kp KP_N5        &kp KP_N6      &kp KP_PLUS    &none
+&trans  &none   &none   &none     &none       &none        &kp LBKT    &kp RBKT  &none  &kp KP_N1        &kp KP_N2        &kp KP_N3      &kp KP_DIVIDE  &none
+                &trans  &trans    &trans      &trans       &trans      &trans    &none  &kp KP_NUMBER_0  &none            &kp KP_DOT
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-&Tap_Hold LS(LC(GRAVE)) GRAVE  &none  &none      &none     &none      &none                         &none           &none           &none           &none            &none  &none
-&trans                         &none  &kp PG_UP  &kp UP    &kp PG_DN  &none                         &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
-&trans                         &none  &kp LEFT   &kp DOWN  &kp RIGHT  &none                         &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&trans                         &none  &none      &none     &none      &none   &kp LBKT    &kp RBKT  &none           &none           &none           &none            &none  &none
-                                      &trans     &trans    &none      &trans  &trans      &trans    &none           &none           &none           &none
+&Tap_Hold LS(LC(GRAVE)) GRAVE  &none  &none      &none     &none      &none                                        &none           &none           &none           &none            &none  &none
+&trans                         &none  &kp PG_UP  &kp UP    &kp PG_DN  &kp LC(PG_UP)                                &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
+&trans                         &none  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LC(PG_DN)                                &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&trans                         &none  &none      &none     &none      &none          &kp LC(LBKT)    &kp LC(RBKT)  &none           &none           &none           &none            &none  &none
+                                      &trans     &trans    &none      &trans         &trans          &trans        &none           &none           &none           &none
             >;
         };
 
