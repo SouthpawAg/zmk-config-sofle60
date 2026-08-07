@@ -44,7 +44,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
         };
 
         Tap_Hold_MO: Tap_Hold_MO {
@@ -71,11 +71,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC           &kp N1             &Tap_Hold F2 N2    &Tap_Hold F3 N3    &Tap_Hold F4 N4    &Tap_Hold F5 N5                                              &Tap_Hold F6 N6  &Tap_Hold F7 N7  &Tap_Hold F8 N8  &Tap_Hold F9 N9  &Tap_Hold EQUAL N0  &kp BACKSPACE
-&kp TAB           &kp Q              &kp W              &kp E              &kp R              &kp T                                                        &kp Y            &kp U            &kp I            &kp O            &kp P               &kp MINUS
-&kp LEFT_SHIFT    &kp A              &kp S              &kp D              &kp F              &kp G                                                        &kp H            &kp J            &kp K            &kp L            &kp SEMI            &kp SQT
-&kp LEFT_CONTROL  &Tap_Hold LC(Z) Z  &Tap_Hold LC(X) X  &Tap_Hold LC(C) C  &Tap_Hold LC(V) V  &kp B            &Tap_Hold F11 HOME    &Tap_Hold F12 END     &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH            &kp RSHFT
-                                     &kp LGUI           &kp LALT           &kp DEL            &mo 1            &kp SPACE             &Tap_Hold_MO 2 ENTER  &kp LEFT_ARROW   &kp UP_ARROW     &kp DOWN_ARROW   &kp RIGHT_ARROW
+&kp ESC           &kp N1  &Tap_Hold F2 N2  &Tap_Hold F3 N3  &Tap_Hold F4 N4  &Tap_Hold F5 N5                                              &Tap_Hold F6 N6  &Tap_Hold F7 N7  &Tap_Hold F8 N8  &Tap_Hold F9 N9  &Tap_Hold EQUAL N0  &kp BACKSPACE
+&kp TAB           &kp Q   &kp W            &kp E            &kp R            &kp T                                                        &kp Y            &kp U            &kp I            &kp O            &kp P               &kp MINUS
+&kp LEFT_SHIFT    &kp A   &kp S            &kp D            &kp F            &kp G                                                        &kp H            &kp J            &kp K            &kp L            &kp SEMI            &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X            &kp C            &kp V            &kp B            &Tap_Hold F11 HOME    &Tap_Hold F12 END     &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH            &kp RSHFT
+                          &kp LGUI         &kp LALT         &kp DEL          &mo 1            &kp SPACE             &Tap_Hold_MO 2 ENTER  &kp LEFT_ARROW   &kp UP_ARROW     &kp DOWN_ARROW   &kp RIGHT_ARROW
             >;
         };
 
@@ -90,22 +90,22 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &kp F1  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                        &none  &none            &kp KP_ASTERISK  &kp KP_DIVIDE  &none          &trans
-&trans  &none   &none   &none     &none       &none                              &none  &kp KP_N7        &kp KP_N8        &kp KP_N9      &kp KP_MINUS   &none
-&trans  &none   &none   &none     &none       &none                              &none  &kp KP_N4        &kp KP_N5        &kp KP_N6      &kp KP_PLUS    &none
-&trans  &none   &none   &none     &none       &none        &kp LBKT    &kp RBKT  &none  &kp KP_N1        &kp KP_N2        &kp KP_N3      &kp KP_DIVIDE  &none
-                &trans  &trans    &trans      &trans       &trans      &trans    &none  &kp KP_NUMBER_0  &none            &kp KP_DOT
+&trans  &kp F1  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                          &none  &none            &kp KP_ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none   &none   &none     &none       &kp LC(PG_UP)                        &none  &kp KP_N7        &kp KP_N8        &kp KP_N9             &kp KP_MINUS           &none
+&trans  &none   &none   &none     &none       &kp LC(PG_DN)                        &none  &kp KP_N4        &kp KP_N5        &kp KP_N6             &kp KP_PLUS            &none
+&trans  &none   &none   &none     &none       &none          &kp LBKT    &kp RBKT  &none  &kp KP_N1        &kp KP_N2        &kp KP_N3             &kp KP_DIVIDE          &none
+                &trans  &trans    &trans      &trans         &trans      &trans    &none  &kp KP_NUMBER_0  &none            &kp KP_DOT
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-&Tap_Hold LS(LC(GRAVE)) GRAVE  &none  &none      &none     &none      &none                                        &none           &none           &none           &none            &none  &none
-&trans                         &none  &kp PG_UP  &kp UP    &kp PG_DN  &kp LC(PG_UP)                                &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
-&trans                         &none  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LC(PG_DN)                                &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&trans                         &none  &none      &none     &none      &none          &kp LC(LBKT)    &kp LC(RBKT)  &none           &none           &none           &none            &none  &none
-                                      &trans     &trans    &none      &trans         &trans          &trans        &none           &none           &none           &none
+&Tap_Hold LC(GRAVE) GRAVE  &none  &none      &none     &none      &none                                        &none           &none           &none           &none            &none  &none
+&trans                     &none  &kp PG_UP  &kp UP    &kp PG_DN  &kp LC(PG_UP)                                &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
+&trans                     &none  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LC(PG_DN)                                &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&trans                     &none  &none      &none     &none      &none          &kp LC(LBKT)    &kp LC(RBKT)  &none           &none           &none           &none            &none  &none
+                                  &trans     &trans    &none      &trans         &trans          &trans        &none           &none           &none           &none
             >;
         };
 
